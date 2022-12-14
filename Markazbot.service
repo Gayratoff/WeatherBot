@@ -1,0 +1,17 @@
+[Unit]
+Description=Test markaz bot
+After=syslog.target
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=2s
+Type=simple
+User=root
+Group=root
+MemoryLimit=2G
+WorkingDirectory=/root/Tarjimon
+ExecStart=/root/Tarjimon/venv/bin/python /root/Tarjimon/app.py
+
+[Install]
+WantedBy=multi-user.target
